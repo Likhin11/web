@@ -1,0 +1,663 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #fff8f4;
+    color: #493c3b;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(circle at top left, #ffe7df, transparent 35%),
+        radial-gradient(circle at bottom right, #f9dce5, transparent 35%),
+        #fff8f4;
+}
+
+.cake {
+    font-size: 80px;
+    margin-bottom: 25px;
+
+    animation: floatCake 3s ease-in-out infinite;
+}
+
+@keyframes floatCake {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.small-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #bd777c;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: "Pacifico", cursive;
+    font-size: clamp(48px, 8vw, 90px);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.hero h1 span {
+    margin-top: 18px;
+    display: block;
+    color: #d98791;
+}
+
+.hero-text {
+    max-width: 600px;
+    margin-top: 25px;
+
+    font-size: 18px;
+    line-height: 1.8;
+    color: #756565;
+}
+
+.scroll-button {
+    margin-top: 35px;
+
+    padding: 14px 30px;
+
+    border: 1px solid #ded2f3;
+
+    border-radius: 50px;
+
+    background: rgba(199, 112, 192, 0.956);
+
+    color: #e8c3ef;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+    
+    animation: bounceButton 1.5s infinite;
+
+    box-shadow:
+        0 0 20px rgba(254, 254, 254, 0.525);
+}
+@keyframes bounceButton {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+.scroll-button:hover {
+    background: #ecbbf5;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 30px rgba(187, 141, 182, 0.951);
+}
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+
+/* =========================
+   BIRTHDAY MESSAGE
+========================= */
+
+.wish-section {
+    padding: 100px 20px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.section-card {
+    width: min(750px, 100%);
+
+    background: rgba(255, 255, 255, 0.8);
+
+    padding: 60px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(180, 130, 130, 0.12);
+}
+
+.section-card h2,
+.memories-section h2,
+.letter h2,
+.final-card h2 {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+
+    font-size: clamp(32px, 5vw, 50px);
+
+    margin-bottom: 30px;
+
+    color: #6d5555;
+}
+
+.section-card p {
+    font-size: 17px;
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+.signature {
+    font-family: "Pacifico", cursive;
+    color: #d98791;
+    font-size: 22px !important;
+
+    margin-top: 35px;
+}
+
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memories-section {
+    padding: 100px 20px;
+
+    text-align: center;
+
+    background: #fff1ed;
+}
+
+.section-intro {
+    margin-bottom: 30px;
+    color: #806e6e;
+}
+
+
+/* Slider */
+
+.slider {
+    position: relative;
+
+    width: min(950px, 100%);
+    margin: auto;
+}
+
+.slide-window {
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 25px 60px rgba(130, 90, 90, 0.18);
+}
+
+.slide-track {
+    display: flex;
+
+    transition:
+        transform 0.75s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.slide {
+    min-width: 100%;
+
+    background: white;
+
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 560px;
+
+    display: block;
+
+    object-fit: cover;
+
+    cursor: pointer;
+}
+
+.slide-caption {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 35px;
+
+    text-align: left;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(50, 30, 30, 0.9)
+        );
+
+    padding-top: 100px;
+}
+
+.slide-caption span {
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.slide-caption h3 {
+    font-family: "Pacifico", cursive;
+
+    font-size: 30px;
+
+    font-weight: 400;
+
+    margin: 8px 0;
+}
+
+.slide-caption p {
+    max-width: 650px;
+
+    line-height: 1.6;
+
+    font-size: 15px;
+}
+
+
+/* Slider buttons */
+
+.slider-btn {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #765c5c;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s;
+}
+
+.slider-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.previous {
+    left: -25px;
+}
+
+.next {
+    right: -25px;
+}
+
+
+/* Dots */
+
+.dots {
+    display: flex;
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-top: 25px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #d8bcbc;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.dot.active {
+    width: 28px;
+
+    border-radius: 20px;
+
+    background: #c98189;
+}
+
+.slide-hint {
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+    font-size: 13px;
+
+    color: #9c8585;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-section {
+    padding: 110px 20px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.letter {
+    width: min(700px, 100%);
+
+    background: #fffaf0;
+
+    padding: 65px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 20px 50px rgba(130, 90, 60, 0.12);
+
+    text-align: center;
+
+    position: relative;
+}
+
+.letter::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 1px dashed #e5c8b8;
+
+    pointer-events: none;
+}
+
+.letter-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.letter p {
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+.letter-sign {
+    font-family: "Pacifico", cursive;
+
+    color: #c98189;
+
+    font-size: 20px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================
+   FINAL SURPRISE
+========================= */
+
+.final-section {
+    min-height: 90vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        radial-gradient(circle, #f8d8df, transparent 60%),
+        #ffe9e3;
+}
+
+.final-card {
+    max-width: 650px;
+}
+
+.gift {
+    font-size: 75px;
+
+    animation: giftFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes giftFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+}
+
+.final-card h2 {
+    margin-top: 20px;
+}
+
+.final-card p {
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+.big-message {
+    font-family: "Pacifico", cursive;
+
+    font-size: 28px !important;
+
+    color: #c97983;
+}
+
+.heart {
+    font-size: 60px;
+
+    margin: 25px;
+
+    animation: heartbeat 1.4s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background: #4d3d3d;
+
+    color: #eadbdb;
+
+    font-size: 13px;
+
+    line-height: 2;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .hero {
+        min-height: 100svh;
+
+        padding: 30px 18px;
+    }
+
+    .cake {
+        font-size: 65px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+    .section-card {
+        padding: 40px 22px;
+
+        border-radius: 22px;
+    }
+
+    .section-card p {
+        font-size: 15px;
+    }
+
+    .wish-section,
+    .memories-section,
+    .letter-section {
+        padding: 75px 15px;
+    }
+
+    .slide img {
+        height: 430px;
+    }
+
+    .slide-caption {
+        padding: 25px;
+
+        padding-top: 90px;
+    }
+
+    .slide-caption h3 {
+        font-size: 24px;
+    }
+
+    .slide-caption p {
+        font-size: 13px;
+    }
+
+    .slider-btn {
+        width: 42px;
+        height: 42px;
+
+        font-size: 18px;
+    }
+
+    .previous {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    .letter {
+        padding: 50px 25px;
+    }
+
+    .letter p {
+        font-size: 15px;
+    }
+
+    .final-section {
+        min-height: 80vh;
+    }
+
+    .final-card p {
+        font-size: 16px;
+    }
+
+    .big-message {
+        font-size: 24px !important;
+    }
+
+}
